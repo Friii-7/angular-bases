@@ -1,0 +1,19 @@
+<h3>Lista de Farzin</h3>
+
+<div *ngIf="deleteFarzin; else nothingWasDeleted">
+  <h3>
+    Farzin borrado <small class="text-danger"> {{ deleteFarzin }} </small>
+  </h3>
+</div>
+
+<ng-template #nothingWasDeleted>
+  <h3>No ha borrado nada.</h3>
+</ng-template>
+
+<button *ngIf="arazNames.length > 0" (click)="removeLastFarzin()" class="btn btn-outline-danger">
+  Borar Ultimo Farzinnnnn
+</button>
+
+<ul class="mt-2 list-group">
+  <li *ngFor="let name of arazNames" class="list-group-item">{{ name }}</li>
+</ul>
